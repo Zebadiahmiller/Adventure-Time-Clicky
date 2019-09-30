@@ -1,0 +1,14 @@
+.lotr-image{
+    height:15vw;
+    width:15vw;
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;    
+    float:left;
+    border: 2px solid gray;
+    margin-left:60px;
+    margin-bottom: 10px;
+    
+}
