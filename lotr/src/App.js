@@ -12,15 +12,20 @@ class App extends Component  {
     clickedChars: [],
     score: 0,
     highScore:0,
-    status:""
+    status:"Play the game by clicking an image!" +
+    " Careful not to click the same image twice!"   
     
     };
 
- imageClick = id => {
-    this.setState({score: this.state.score +1, clickedChars: [...this.state.clickedChars, id]})
-    if(this.state.clickedChars.includes(this.id)){
-      this.setState({score:0, status:"You lost try again!"})
+ imageClick = id => {     
+    if(this.state.clickedChars.includes(id)){
+      this.setState({score:0, status:"You lost try again! "})
     }
+    else{
+      this.setState({score: this.state.score +1, clickedChars: [...this.state.clickedChars, id]})
+      console.log(this.state.clickedChars)
+    }
+    
     
  };
  render(){
@@ -33,10 +38,14 @@ class App extends Component  {
       highScore={this.state.highScore}
       status ={this.state.status}
       />
-      <Header />
+      <Header 
+      status = {this.state.status}
+      />
+      
       {this.state.Chars.map(chars => (
       <Characters
       imageClick = {this.imageClick}
+      id={chars.id}
       alt={chars.name}
       image ={chars.image}
       name ={chars.name}
