@@ -3,10 +3,10 @@ import "../style.css"
 
 function Characters(props) {
     return (
-        <div>
-            <img className="lotr-image" alt={props.name} src={props.image} />
-            <span></span>
-        </div>
+        
+        <img className="lotr-image" alt={props.name} src={props.image} onClick={() => props.imageClick(props.id)}></img>            
+                
+       
 
     );
 }

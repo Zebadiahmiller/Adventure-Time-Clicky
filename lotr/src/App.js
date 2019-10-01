@@ -8,19 +8,35 @@ import Chars from "./characters.json"
 
 class App extends Component  {
   state={
-    Chars
-  };
+    Chars,
+    clickedChars: [],
+    score: 0,
+    highScore:0,
+    status:""
+    
+    };
 
- imageClick = ()=>{
-   
- }
-  render(){
+ imageClick = id => {
+    this.setState({score: this.state.score +1, clickedChars: [...this.state.clickedChars, id]})
+    if(this.state.clickedChars.includes(this.id)){
+      this.setState({score:0, status:"You lost try again!"})
+    }
+    
+ };
+ render(){
+  
+    
   return (
     <Wrapper>
-      <Scores />
+      <Scores 
+      score={this.state.score}
+      highScore={this.state.highScore}
+      status ={this.state.status}
+      />
       <Header />
       {this.state.Chars.map(chars => (
       <Characters
+      imageClick = {this.imageClick}
       alt={chars.name}
       image ={chars.image}
       name ={chars.name}
@@ -29,7 +45,8 @@ class App extends Component  {
     </Wrapper>
       
   );
-  }
+  
+}
 }
 
 export default App;
