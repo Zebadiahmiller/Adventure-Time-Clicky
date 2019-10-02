@@ -12,27 +12,35 @@ class App extends Component  {
     clickedChars: [],
     score: 0,
     highScore:0,
-    status:"Play the game by clicking an image!" +
-    " Careful not to click the same image twice!"   
-    
+    status:""    
     };
+     
+  random = this.state.Chars.sort(function (a,b){return 0.5-Math.random()})
+  
+  
 
  imageClick = id => {     
     if(this.state.clickedChars.includes(id)){
       this.setState({score:0, status:"You lost try again! "})
+      if(this.state.score > this.state.highScore){
+        this.setState({highScore: this.state.score})
+
+      }
     }
-    else{
-      this.setState({score: this.state.score +1, clickedChars: [...this.state.clickedChars, id]})
-      console.log(this.state.clickedChars)
+   
+    else{      
+      this.setState({score: this.state.score +1, clickedChars: [...this.state.clickedChars, id]})          
+      console.log(this.state.clickedChars);
+      
     }
     
     
  };
- render(){
-  
+ 
+ render(){ 
     
   return (
-    <Wrapper>
+    <div>
       <Scores 
       score={this.state.score}
       highScore={this.state.highScore}
@@ -40,9 +48,9 @@ class App extends Component  {
       />
       <Header 
       status = {this.state.status}
-      />
-      
-      {this.state.Chars.map(chars => (
+      /> 
+      <Wrapper>   
+      {this.random.map(chars => (
       <Characters
       imageClick = {this.imageClick}
       id={chars.id}
@@ -51,7 +59,8 @@ class App extends Component  {
       name ={chars.name}
       />
       ))};
-    </Wrapper>
+      </Wrapper> 
+    </div>
       
   );
   

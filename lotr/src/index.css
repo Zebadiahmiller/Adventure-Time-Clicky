@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/0/0a/Island_Song_blank_loop.gif/revision/latest?cb=20181018074244");
+  /* background-repeat: no-repeat; */
+  background-size: 100%;
+  
 }
 
 code {

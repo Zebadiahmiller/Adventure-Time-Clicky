@@ -1,22 +1,29 @@
 .lotr-image{
     height:15vw;
-    width:15vw;
+    width:18vw;
     display:flex;
     justify-content: center;
     flex-direction: row;
     align-items: center;
     align-content: center;    
     float:left;
-    border: 2px solid gray;
+    border: 2px solid #A6DEF9;
     margin-left:60px;
     margin-bottom: 10px;
     
 }
 .chars-scores{
     font-size: 2rem;    
+    font-family: 'MedievalSharp', cursive;
 }
 .status-text{
     font-size:2rem;
-    
+    font-family: 'MedievalSharp', cursive;
+}
+.jum-bck{
+    background-color: transparent;
+}
+#score-color{
+        background-color: #A6DEF9;
 }
     
