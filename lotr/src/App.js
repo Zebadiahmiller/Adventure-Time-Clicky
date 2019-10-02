@@ -13,14 +13,25 @@ class App extends Component {
     score: 0,
     highScore: 0,
     status: ""
+   
   };
 
+  newGame = () =>{
+    setTimeout(
+      function() {
+          this.setState({status:""});
+      }
+      .bind(this),
+      1000
+  );
+  }
   
  random = () => {this.state.Chars.sort(function (a, b) { return 0.5 - Math.random() })}
 
   imageClick = id => {
     if (this.state.clickedChars.includes(id)) {
       this.setState({ score: 0, status: "You lost try again! " })
+      this.newGame()
       if (this.state.score > this.state.highScore) {
         this.setState({ highScore: this.state.score })
       };
