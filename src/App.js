@@ -19,7 +19,7 @@ class App extends Component {
   newGame = () =>{
     setTimeout(
       function() {
-          this.setState({status:""});
+          this.setState({status:"", clickedChars:[] });
       }
       .bind(this),
       2000
@@ -30,7 +30,7 @@ class App extends Component {
 
   imageClick = id => {
     if (this.state.clickedChars.includes(id)) {
-      this.setState({ score: 0, status: "You lost try again! " })
+      this.setState({ score: 0, status: "You lost try again! "})
       this.newGame()
       if (this.state.score > this.state.highScore) {
         this.setState({ highScore: this.state.score })
