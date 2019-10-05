@@ -8,8 +8,9 @@
     align-content: center;    
     float:left;
     border: 2px solid #A6DEF9;
-    margin-left:60px;
+    margin-left:80px;
     margin-bottom: 10px;
+    margin-top:-5px;
     
 }
 .chars-scores{
@@ -22,6 +23,7 @@
 }
 .jum-bck{
     background-color: transparent;
+    margin-bottom: -5px;
 }
 #score-color{
         background-color: #A6DEF9;

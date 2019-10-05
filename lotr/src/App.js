@@ -22,7 +22,7 @@ class App extends Component {
           this.setState({status:""});
       }
       .bind(this),
-      1000
+      2000
   );
   }
   
