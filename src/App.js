@@ -19,7 +19,11 @@ class App extends Component {
   newGame = () =>{
     setTimeout(
       function() {
+<<<<<<< HEAD
           this.setState({status:"", clickedChars:[] });
+=======
+          this.setState({status:"", clickedChars:[]});
+>>>>>>> 1a76b6122f530ea450e8d5d9960f73ca58e08e7d
       }
       .bind(this),
       2000
